@@ -39,45 +39,52 @@
     <a href="teaching.html">Teaching</a>
   </nav>
 
-  <section>
-    <h2>Research</h2>
-    <p>My work focuses on neutral atom arrays, optical lattices, and exploring quantum phenomena like Rydberg interactions and Bose-Einstein condensation.</p>
-    
-    <h3>Featured Experiment</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/BEC_Interference.png/320px-BEC_Interference.png"
-         alt="BEC interference"
-         class="paper-thumbnail"
-         onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/9/98/BEC_Interference.png')"/>
-
-    <p>Click the image to see details.</p>
-  </section>
-
-  <footer>
-    &copy; 2025 Utku Saglam — Exploring the quantum universe ✨
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 2 },
-        "line_linked": { "enable": true, "distance": 150, "color": "#62b6cb", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 1 }
-      },
-      "interactivity": {
-        "events": { "onhover": { "enable": true, "mode": "repulse" } }
-      },
-      "retina_detect": true
-    });
-
-    function openLightbox(imageUrl) {
-      basicLightbox.create(`<img src="${imageUrl}" style="max-width:90%; max-height:90%">`).show();
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 50, 
+      "density": { "enable": true, "value_area": 800 }
+    },
+    "color": { "value": "#9bd3f5" },
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.2,
+      "random": true
+    },
+    "size": {
+      "value": 8,
+      "random": true
+    },
+    "line_linked": { 
+      "enable": false 
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.6,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out"
     }
-  </script>
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "bubble" }
+    },
+    "modes": {
+      "bubble": {
+        "distance": 100,
+        "size": 12,
+        "duration": 2,
+        "opacity": 0.5,
+        "speed": 1
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
 </body>
 </html>
