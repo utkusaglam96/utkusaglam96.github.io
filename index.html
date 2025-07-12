@@ -7,45 +7,63 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #e0e0e0;
-      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
-      min-height: 100vh;
+      background: #000 url('https://images.unsplash.com/photo-1477201379328-0f6f57b8b56f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      scroll-behavior: smooth;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.8);
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 2;
     }
-
-    header {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
     }
-
-    header h1 {
-      font-size: 3rem;
-      color: #9bd3f5;
-      margin-bottom: 0.5rem;
+    nav a:hover {
+      color: #62b6cb;
     }
-
-    header p {
-      font-size: 1.3rem;
-      color: #ccc;
-    }
-
-    main {
+    section {
+      position: relative;
+      z-index: 1;
       max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
       text-align: center;
-      padding: 2rem 1rem;
     }
-
-    main h2 {
+    section h2 {
+      color: #9bd3f5;
       font-size: 2rem;
-      color: #a1cdf1;
       margin-bottom: 1rem;
     }
-
+    .socials {
+      margin-top: 2rem;
+    }
+    .socials a {
+      margin: 0 1rem;
+      color: #e0e0e0;
+      font-size: 2rem;
+      transition: color 0.3s;
+    }
+    .socials a:hover {
+      color: #62b6cb;
+    }
     a.button {
       display: inline-block;
       margin-top: 2rem;
@@ -56,49 +74,54 @@
       border-radius: 30px;
       transition: background 0.3s, transform 0.2s;
     }
-
     a.button:hover {
       background: #62b6cb;
       transform: scale(1.05);
     }
-
     footer {
-      margin-top: auto;
       text-align: center;
-      padding: 1rem;
-      color: #888;
+      padding: 2rem 1rem;
+      color: #aaa;
       font-size: 0.9rem;
     }
-
-    /* Little stars effect */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: transparent url('https://i.ibb.co/yPS0HJL/stars.png') repeat;
-      opacity: 0.2;
-      z-index: 0;
-    }
-
-    header, main, footer {
-      position: relative;
-      z-index: 1;
-    }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>Utku Saglam</h1>
-    <p>Exploring the quantum universe, one atom at a time.</p>
-  </header>
-  <main>
-    <h2>About Me</h2>
-    <p>I’m Utku, a PhD researcher diving into atomic physics and quantum computing. I love uncovering the secrets of nature, coding simulations, and building experiments with light and matter.</p>
-    <p>When I'm not in the lab, you'll find me cycling under the stars, cooking something new, or reading about philosophy and AI.</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+  </nav>
 
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I’m Utku, a PhD researcher in atomic physics and quantum computing. I love uncovering nature's secrets, coding simulations, and building experiments with light and matter.</p>
+    <p>Outside the lab, I enjoy biking under the stars, cooking new dishes, and diving into philosophy and AI discussions.</p>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://scholar.google.com/citations?user=YOUR-SCHOLAR-ID" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+      <a href="https://www.researchgate.net/profile/YOUR-RESEARCHGATE" target="_blank"><i class="fab fa-researchgate"></i></a>
+    </div>
     <a class="button" href="mailto:youremail@example.com">Contact Me</a>
-  </main>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p>My research focuses on neutral atom arrays, optical lattices, and exploring quantum phenomena like Bose-Einstein condensation and Rydberg interactions.</p>
+    <p>This section will include more details on my projects, publications, and simulations soon. Stay tuned!</p>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>I have enjoyed teaching undergraduate labs and discussion sections in quantum mechanics, electromagnetism, and introductory physics.</p>
+    <h3>Classes Taught</h3>
+    <p>PHYS 201: General Physics, PHYS 311: Modern Physics, PHYS 531: Quantum Mechanics</p>
+    <h3>Tutoring</h3>
+    <p>I offer tutoring in advanced physics topics and math for undergraduates. Feel free to reach out!</p>
+  </section>
+
   <footer>
     &copy; 2025 Utku Saglam — All stardust reserved ✨
   </footer>
