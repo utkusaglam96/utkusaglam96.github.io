@@ -47,44 +47,30 @@
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": {
-      "value": 500,
-      "density": { "enable": true, "value_area": 600 }
-    },
+    "number": { "value": 500, "density": { "enable": true, "value_area": 600 } },
     "color": { "value": ["#9bd3f5", "#baffc9", "#fcd5ce", "#ff99c8"] },
     "shape": { "type": "circle" },
-    "opacity": {
-      "value": 0.8,
-      "random": true
-    },
-    "size": {
-      "value": 3,
-      "random": true
-    },
+    "opacity": { "value": 0.8, "random": true },
+    "size": { "value": 3, "random": true },
     "line_linked": { "enable": false },
     "move": {
       "enable": true,
-      "speed": 1.5,  // FASTER so they visibly drift
+      "speed": 1.5,
       "direction": "none",
       "random": true,
       "straight": false,
-      "out_mode": "out",
-      "attract": { "enable": false }
+      "out_mode": "out"
     }
   },
   "interactivity": {
+    "detect_on": "window", <!-- KEY FIX -->
     "events": {
       "onhover": { "enable": true, "mode": "repulse" },
-      "onclick": { "enable": true, "mode": "push" } // optional: adds more on click
+      "onclick": { "enable": true, "mode": "push" }
     },
     "modes": {
-      "repulse": {
-        "distance": 100, // more obvious reaction
-        "duration": 0.5
-      },
-      "push": {
-        "particles_nb": 4
-      }
+      "repulse": { "distance": 100, "duration": 0.5 },
+      "push": { "particles_nb": 4 }
     }
   },
   "retina_detect": true
