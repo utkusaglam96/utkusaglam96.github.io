@@ -5,28 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Utku Saglam - Research</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
   <style>
-    /* Ensure content stays above particles */
-    #particles-js, body::before {
+    /* Make the particles glow with a subtle blur */
+    #particles-js canvas {
+      filter: blur(1px);
+    }
+    /* Ensure content stays above */
+    section, nav, footer {
+      position: relative;
+      z-index: 2;
+      color: #e0e0e0;
+    }
+    #particles-js {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: 0;
-    }
-    section, nav, footer {
-      position: relative;
-      z-index: 1;
-    }
-    .paper-thumbnail {
-      cursor: pointer;
-      transition: transform 0.3s;
-      max-width: 200px;
-      border: 2px solid #62b6cb;
-      border-radius: 5px;
-    }
-    .paper-thumbnail:hover {
-      transform: scale(1.1);
+      pointer-events: none;
     }
   </style>
 </head>
@@ -41,67 +36,55 @@
 
   <section>
     <h2>Research</h2>
-    <p>My work focuses on neutral atom arrays, optical lattices, and exploring quantum phenomena like Rydberg interactions and Bose-Einstein condensation.</p>
-    
-    <h3>Featured Experiment</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/BEC_Interference.png/320px-BEC_Interference.png"
-         alt="BEC interference"
-         class="paper-thumbnail"
-         onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/9/98/BEC_Interference.png')"/>
-
-    <p>Click the image to see details.</p>
+    <p>This page showcases my work on atomic physics, quantum experiments, and simulations.</p>
   </section>
 
   <footer>
-    &copy; 2025 Utku Saglam — Exploring the quantum universe ✨
+    &copy; 2025 Utku Saglam — Quantum adventures ✨
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
   <script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 600,
-      "density": { "enable": true, "value_area": 300 }
-    },
-    "color": { "value": ["#9bd3f5", "#baffc9", "#fcd5ce", "#ff99c8"] },
-    "shape": { "type": "circle" },
-    "opacity": {
-      "value": 0.9,
-      "random": true
-    },
-    "size": {
-      "value": 2,
-      "random": true
-    },
-    "line_linked": { "enable": false },
-    "move": {
-      "enable": true,
-      "speed": 1.2,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "attract": { "enable": false }
-    }
-  },
-  "interactivity": {
-    "events": {
-      "onhover": { "enable": true, "mode": "repulse" }
-    },
-    "modes": {
-      "repulse": {
-        "distance": 45, <!-- ~30% of original -->
-        "duration": 0.4
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 600,
+        "density": { "enable": true, "value_area": 300 }
+      },
+      "color": { "value": ["#9bd3f5", "#baffc9", "#fcd5ce", "#ff99c8"] },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.9,
+        "random": true
+      },
+      "size": {
+        "value": 2,
+        "random": true
+      },
+      "line_linked": { "enable": false },
+      "move": {
+        "enable": true,
+        "speed": 1.2,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out",
+        "attract": { "enable": false }
       }
-    }
-  },
-  "retina_detect": true
-});
-</script>
-
-
-
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      },
+      "modes": {
+        "repulse": {
+          "distance": 45,
+          "duration": 0.4
+        }
+      }
+    },
+    "retina_detect": true
+  });
+  </script>
 </body>
 </html>
