@@ -4,17 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Utku Saglam - Research</title>
-  <link rel="stylesheet" href="style.css"/>
   <style>
-    /* Make the particles glow with a subtle blur */
-    #particles-js canvas {
-      filter: blur(2px);
-    }
-    /* Ensure content stays above */
-    section, nav, footer {
-      position: relative;
-      z-index: 2;
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #e0e0e0;
+      background: linear-gradient(to bottom, #0b1e3f, #000000);
+      background-attachment: fixed;
+      overflow-x: hidden;
     }
     #particles-js {
       position: fixed;
@@ -22,6 +20,49 @@
       width: 100%; height: 100%;
       z-index: 0;
       pointer-events: none;
+    }
+    #particles-js canvas {
+      filter: blur(2px); /* subtle glow */
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 2;
+    }
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #62b6cb;
+    }
+    section {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    section h2 {
+      color: #9bd3f5;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -44,37 +85,37 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 500, "density": { "enable": true, "value_area": 600 } },
-    "color": { "value": ["#fcd5ce"] },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.8, "random": true },
-    "size": { "value": 3, "random": true },
-    "line_linked": { "enable": false },
-    "move": {
-      "enable": true,
-      "speed": 1.5,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out"
-    }
-  },
-  "interactivity": {
-    "detect_on": "window", <!-- KEY FIX -->
-    "events": {
-      "onhover": { "enable": true, "mode": "repulse" },
-      "onclick": { "enable": true, "mode": "push" }
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 500, "density": { "enable": true, "value_area": 600 } },
+      "color": { "value": ["#fcd5ce"] },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.8, "random": true },
+      "size": { "value": 3, "random": true },
+      "line_linked": { "enable": false },
+      "move": {
+        "enable": true,
+        "speed": 1.5,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out"
+      }
     },
-    "modes": {
-      "repulse": { "distance": 50, "duration": 0.5 },
-      "push": { "particles_nb": 4 }
-    }
-  },
-  "retina_detect": true
-});
-</script>
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      },
+      "modes": {
+        "repulse": { "distance": 50, "duration": 0.5 },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+  </script>
 </body>
 </html>
