@@ -9,15 +9,18 @@
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #e0e0e0;
-      background: #000 url('https://images.unsplash.com/photo-1477201379328-0f6f57b8b56f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      background: #000;
+      overflow-x: hidden;
     }
-    body::before {
-      content: "";
+    #particles-js {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
       z-index: 0;
+      pointer-events: none;
+    }
+    #particles-js canvas {
+      filter: blur(1px); /* glow */
     }
     nav {
       position: sticky;
@@ -40,7 +43,7 @@
     }
     section {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 800px;
       margin: 0 auto;
       padding: 4rem 1rem;
@@ -51,33 +54,33 @@
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .socials {
+    .social-circles {
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
     }
-    .socials a {
-      margin: 0 1rem;
-      color: #e0e0e0;
-      font-size: 2rem;
-      transition: color 0.3s;
-    }
-    .socials a:hover {
-      color: #62b6cb;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.8rem 1.6rem;
-      background: #1b4965;
+    .social-circles a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px; height: 50px;
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #62b6cb;
+      border-radius: 50%;
+      font-size: 1.8rem;
       color: #e0e0e0;
       text-decoration: none;
-      border-radius: 30px;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s, transform 0.3s;
     }
-    a.button:hover {
+    .social-circles a:hover {
       background: #62b6cb;
-      transform: scale(1.05);
+      color: #000;
+      transform: scale(1.15);
     }
     footer {
+      position: relative;
+      z-index: 2;
       text-align: center;
       padding: 2rem 1rem;
       color: #aaa;
@@ -87,6 +90,8 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <nav>
     <a href="index.html">About</a>
     <a href="research.html">Research</a>
@@ -95,16 +100,17 @@
 
   <section>
     <h2>About Me</h2>
-    <p>Hi! I’m Utku, welcome to my github page! I am a PhD researcher working on atomic physics and quantum computing at <a href="url">Yavuz Lab</a> in UW-Madison. I am very interested in uncovering and understand the nature's secrets, especially topics related to quantum mechanics, quantum computing, optics, atoms and ions. I am also very interested in analog and digital electrical engineering, chips, circuits and computer hardware. <p> \
-    <p>In addition, recently I've been thinking a lot about consciousness and artificial intelligance and it's effects on what it means to be a human.</p>
-    <p>Outside the lab, I enjoy biking, cooking, going to the gym, sailing, wathcing and discussing films, art and diving into philosophy and AI discussions.</p>
+    <p>Hi! I’m Utku, welcome to my github page! I am a PhD researcher working on atomic physics and quantum computing at <a href="https://yavuzlab.physics.wisc.edu/" style="color:#62b6cb;">Yavuz Lab</a> in UW-Madison. 
+    I'm passionate about exploring nature's secrets — especially quantum mechanics, quantum computing, optics, atoms and ions.
+    I also love analog and digital electrical engineering, chips, circuits and computer hardware.</p>
+    <p>Lately, I've been thinking a lot about consciousness, artificial intelligence, and what it means to be human.</p>
+    <p>Outside the lab, I enjoy biking, cooking, going to the gym, sailing, watching & discussing films, art, philosophy and AI topics.</p>
 
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/utku-sağlam-a53175110/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <div class="social-circles">
+      <a href="https://www.linkedin.com/in/utku-sağlam-a53175110/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://scholar.google.com/citations?user=OcPNVbcAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
       <a href="https://www.researchgate.net/profile/Utku-Saglam?ev=prf_overview" target="_blank"><i class="fab fa-researchgate"></i></a>
     </div>
-    <a class="button" href="mailto:youremail@example.com">Contact Me</a>
   </section>
 
   <footer>
