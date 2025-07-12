@@ -22,7 +22,7 @@
       pointer-events: none;
     }
     #particles-js canvas {
-      filter: blur(1px);
+      filter: blur(2px); /* subtle glow */
     }
     nav {
       position: sticky;
@@ -102,7 +102,7 @@
   particlesJS("particles-js", {
     "particles": {
       "number": { "value": 500, "density": { "enable": true, "value_area": 600 } },
-      "color": { "value": ["#9bd3f5", "#baffc9", "#fcd5ce", "#ff99c8"] },
+      "color": { "value": ["#fcd5ce"] },
       "shape": { "type": "circle" },
       "opacity": { "value": 0.8, "random": true },
       "size": { "value": 3, "random": true },
@@ -123,7 +123,7 @@
         "onclick": { "enable": true, "mode": "push" }
       },
       "modes": {
-        "repulse": { "distance": 100, "duration": 0.5 },
+        "repulse": { "distance": 50, "duration": 0.5 },
         "push": { "particles_nb": 4 }
       }
     },
