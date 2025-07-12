@@ -4,9 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Utku Saglam - Teaching</title>
-  <link rel="stylesheet" href="style.css"/>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0e0e0;
+      background: linear-gradient(to bottom, #0b1e3f, #000000);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    #particles-js canvas {
+      filter: blur(1px);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      z-index: 2;
+    }
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #62b6cb;
+    }
+    section {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    section h2 {
+      color: #9bd3f5;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <nav>
     <a href="index.html">About</a>
     <a href="research.html">Research</a>
@@ -15,15 +77,58 @@
 
   <section>
     <h2>Teaching</h2>
-    <p>I’ve taught undergraduate physics labs and discussions in quantum mechanics, electromagnetism, and introductory physics.</p>
-    <h3>Classes Taught</h3>
-    <p>PHYS 201: General Physics, PHYS 311: Modern Physics, PHYS 531: Quantum Mechanics</p>
-    <h3>Tutoring</h3>
-    <p>I enjoy helping students understand challenging concepts in physics and math. Feel free to reach out if you’re interested in tutoring!</p>
-  </section>
+    <p>I mainly taught Phys 202 Calculus-based Electromagnetics for Engineers for three semesters. I really enjoy teaching this class because I love how beautifully calculus applies itself to the nature. My experimental background and familiarity with electronics helps a lot during the lab sessions.</p>
+  
 
+  <h3>Tutoring</h3>
+  <p>I've been tutoring several physics classes since 2022. I mainly tutor 100 and 200-level physics courses. But I also tutor higher level electrodynamics and quantum mechanics courses. </p>
+  <ul style="list-style-type: disc; padding-left: 1.5rem; text-align: left; max-width: 600px; margin: 2rem auto;">
+    <li>Physics 202, Calculus-based introduction to Electromagnetism </li>
+    <li>Physics 208, Electricity, magnetism, light, and modern physics</li>
+    <li>Physics 207, Calculus-based introduction to Mechanics</li>
+    <li>Physics 249, Modern physics: introduction to quantum mechanics</li>
+    <li>Physics 104, Principles of electricity and magnetism, light, optics, and modern physics</li>
+    <li>Physics 415, An introduction to thermodynamics and statistical mechanics</li>
+  </ul>
+
+  </section>
+  
   <footer>
-    &copy; 2025 Utku Saglam — Sharing the wonder of physics ✨
+    2025 Utku Saglam 
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 500, "density": { "enable": true, "value_area": 600 } },
+      "color": { "value": ["#9bd3f5", "#baffc9", "#fcd5ce", "#ff99c8"] },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.8, "random": true },
+      "size": { "value": 3, "random": true },
+      "line_linked": { "enable": false },
+      "move": {
+        "enable": true,
+        "speed": 1.5,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" }
+      },
+      "modes": {
+        "repulse": { "distance": 100, "duration": 0.5 },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+  </script>
 </body>
 </html>
