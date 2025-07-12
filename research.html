@@ -5,8 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Utku Saglam - Research</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+  <style>
+    /* Ensure content stays above particles */
+    #particles-js, body::before {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+    section, nav, footer {
+      position: relative;
+      z-index: 1;
+    }
+    .paper-thumbnail {
+      cursor: pointer;
+      transition: transform 0.3s;
+      max-width: 200px;
+      border: 2px solid #62b6cb;
+      border-radius: 5px;
+    }
+    .paper-thumbnail:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <nav>
     <a href="index.html">About</a>
     <a href="research.html">Research</a>
@@ -15,12 +41,43 @@
 
   <section>
     <h2>Research</h2>
-    <p>My work focuses on neutral atom arrays, optical lattices, Bose-Einstein condensates, and exploring quantum phenomena like Rydberg interactions.</p>
-    <p>I'll soon add detailed descriptions of my projects, publications, and some cool simulation visuals here. Stay tuned!</p>
+    <p>My work focuses on neutral atom arrays, optical lattices, and exploring quantum phenomena like Rydberg interactions and Bose-Einstein condensation.</p>
+    
+    <h3>Featured Experiment</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/BEC_Interference.png/320px-BEC_Interference.png"
+         alt="BEC interference"
+         class="paper-thumbnail"
+         onclick="openLightbox('https://upload.wikimedia.org/wikipedia/commons/9/98/BEC_Interference.png')"/>
+
+    <p>Click the image to see details.</p>
   </section>
 
   <footer>
     &copy; 2025 Utku Saglam — Exploring the quantum universe ✨
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#62b6cb", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 1 }
+      },
+      "interactivity": {
+        "events": { "onhover": { "enable": true, "mode": "repulse" } }
+      },
+      "retina_detect": true
+    });
+
+    function openLightbox(imageUrl) {
+      basicLightbox.create(`<img src="${imageUrl}" style="max-width:90%; max-height:90%">`).show();
+    }
+  </script>
 </body>
 </html>
